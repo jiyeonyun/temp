@@ -2,7 +2,9 @@
 
 import React, { useEffect } from "react";
 
-const KakaoMap = () => {
+const KakaoMap = ({ basketInfo }: any) => {
+    console.log("basketInfo: ", basketInfo);
+    var markers = [];
     useEffect(() => {
         const kakaoMapScript = document.createElement("script");
         kakaoMapScript.async = false;
@@ -13,24 +15,26 @@ const KakaoMap = () => {
             window.kakao.maps.load(() => {
                 var container = document.getElementById("map");
                 var options = {
-                    center: new window.kakao.maps.LatLng(37.5217284, 127.0481926),
-                    level: 4,
+                    center: new window.kakao.maps.LatLng(37.541, 126.986),
+                    level: 8,
                 };
 
                 var map = new window.kakao.maps.Map(container, options);
-                // var imageSrc = "/images/ic_zentropy_main.png"; // 마커이미지의 주소입니다
-                // var imageSize = new window.kakao.maps.Size(30, 37);
-                // var markerImage = new window.kakao.maps.MarkerImage(imageSrc, imageSize);
-                var markerPosition = new window.kakao.maps.LatLng(37.5217284, 127.0481926);
-                /**마커 이미지 변경 필요 */
 
-                var marker = new window.kakao.maps.Marker({
-                    position: markerPosition,
-                    // image: markerImage,
+                basketInfo.forEach((item: any) => {
+                    let imageSrc = "/images/mapmark.png";
+                    let imageSize = new window.kakao.maps.Size(60, 60);
+                    let markerImage = new window.kakao.maps.MarkerImage(imageSrc, imageSize);
+                    let markerPosition = new window.kakao.maps.LatLng(Number(item.y), Number(item.x));
+                    let marker = new window.kakao.maps.Marker({
+                        position: markerPosition,
+                        image: markerImage,
+                    });
+                    marker.setMap(map);
                 });
+
                 var zoomControl = new window.kakao.maps.ZoomControl();
                 map.addControl(zoomControl, window.kakao.maps.ControlPosition.RIGHT);
-                marker.setMap(map);
             });
         };
 
