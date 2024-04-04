@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mongodb": "^6.5.0",
     "next": "14.1.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sass": "^1.74.1",
+    "scss": "^0.2.4"
   },
   "devDependencies": {
     "@types/navermaps": "^3.7.5",
