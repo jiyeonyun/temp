@@ -1,12 +1,13 @@
 import { headers } from "next/headers";
 import styles from "./main.module.scss";
 import KakaoMap from "../common/kakaoMap";
+import BasketList from "./basketList";
 export default async function Main() {
     const data = await fetchBasket();
-
     return (
         <div className={styles.mainPage}>
             <KakaoMap basketInfo={data} />
+            <BasketList basketInfo={data} />
         </div>
     );
 }

@@ -6,6 +6,7 @@ const nextConfig = {
         styledComponents: true,
     },
     images: {
+        domains: ["https://yeyak.seoul.go.kr/"],
         formats: ["image/avif", "image/webp"],
         minimumCacheTTL: 31536000,
         imageSizes: [32, 64, 96, 128, 256],

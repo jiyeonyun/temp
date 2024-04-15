@@ -4,6 +4,7 @@ import { Noto_Sans_KR } from "next/font/google";
 
 import "./globals.css";
 import Script from "next/script";
+import Header from "./common/header";
 
 const notoSansKr = Noto_Sans_KR({ subsets: ["latin"] });
 declare global {
@@ -27,7 +28,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={notoSansKr.className}>{children}</body>
+            <body className={notoSansKr.className}>
+                <Header />
+                {children}
+            </body>
             <Script
                 type="text/javascript"
                 src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false&libraries=services`}

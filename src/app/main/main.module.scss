@@ -1,3 +1,29 @@
 .mainPage{
     height: 100vh;
+    position: relative;
+}
+.basketList{
+    position: fixed;
+    z-index: 200;
+    height: 100vh;
+    width: 400px;
+    background-color: white;
+    top: 0;
+    right: 0;
+    padding: 80px 30px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    .basketinnerWrapper{
+        height: 100%;
+    }
+    .basketCard{
+        border-radius: 8px;
+        padding: 20px 10px;
+        border: 1px solid #dddd;
+        margin-bottom: 10px;
+        img{
+            border-radius: 8px;
+            width: 100%;
+        }
+    }
 }

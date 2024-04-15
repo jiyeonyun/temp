@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 
 const KakaoMap = ({ basketInfo }: any) => {
     console.log("basketInfo: ", basketInfo);
-    var markers = [];
     useEffect(() => {
         const kakaoMapScript = document.createElement("script");
         kakaoMapScript.async = false;
@@ -33,8 +32,8 @@ const KakaoMap = ({ basketInfo }: any) => {
                     marker.setMap(map);
                 });
 
-                var zoomControl = new window.kakao.maps.ZoomControl();
-                map.addControl(zoomControl, window.kakao.maps.ControlPosition.RIGHT);
+                // var zoomControl = new window.kakao.maps.ZoomControl();
+                // map.addControl(zoomControl, window.kakao.maps.ControlPosition.RIGHT);
             });
         };
 
