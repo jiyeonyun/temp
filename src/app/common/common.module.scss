@@ -1,0 +1,16 @@
+.header{
+    background-color: rgb(243, 243, 243);
+    position: fixed;
+    z-index: 9999;
+    width: 100vw;
+    height: 50px;
+    
+    nav{
+        max-width: 1200px;
+        height: 100%;
+        padding: 0 120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
