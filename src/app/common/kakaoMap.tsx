@@ -2,8 +2,7 @@
 
 import React, { useEffect } from "react";
 
-const KakaoMap = ({ basketInfo }: any) => {
-    console.log("basketInfo: ", basketInfo);
+const KakaoMap = ({ basketInfo, center, zoom }: any) => {
     useEffect(() => {
         const kakaoMapScript = document.createElement("script");
         kakaoMapScript.async = false;
@@ -14,8 +13,8 @@ const KakaoMap = ({ basketInfo }: any) => {
             window.kakao.maps.load(() => {
                 var container = document.getElementById("map");
                 var options = {
-                    center: new window.kakao.maps.LatLng(37.541, 126.986),
-                    level: 8,
+                    center: new window.kakao.maps.LatLng(center[0], center[1]),
+                    level: zoom,
                 };
 
                 var map = new window.kakao.maps.Map(container, options);
@@ -38,7 +37,7 @@ const KakaoMap = ({ basketInfo }: any) => {
         };
 
         kakaoMapScript.addEventListener("load", onLoadKakaoAPI);
-    }, []);
+    }, [center]);
 
     return <div id="map" style={{ width: "100%", height: "100%" }} />;
 };

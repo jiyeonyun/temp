@@ -1,16 +1,15 @@
 import { headers } from "next/headers";
 import styles from "./main.module.scss";
-import KakaoMap from "../common/kakaoMap";
-import BasketList from "./basketList";
+import BasketForm from "./basketForm";
 export default async function Main() {
     const data = await fetchBasket();
     return (
         <div className={styles.mainPage}>
-            <KakaoMap basketInfo={data} />
-            <BasketList basketInfo={data} />
+            <BasketForm data={data} />
         </div>
     );
 }
+
 export async function fetchBasket(): Promise<any> {
     const host = headers().get("host");
     const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
