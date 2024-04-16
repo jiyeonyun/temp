@@ -1,17 +1,59 @@
 .mainPage{
     height: 100vh;
     position: relative;
+   
+    .basketinnerWrapper{
+        height: 100%;
+    }
+    .basketOuterWrapperOpen{
+        height: 100vh;
+        position: fixed;
+        background-color: rgba(255, 0, 0, 0);
+        width: 40px;
+        z-index: 99999;
+        top: 0;
+        right: 400px;
+        transition: all 1s;
+
+
+    }
+    .basketOuterWrapperClose{
+        height: 100vh;
+        position: fixed;
+        background-color: rgba(255, 0, 0, 0);
+        width: 40px;
+        z-index: 99999;
+        top: 0;
+        right: 0;
+        transition: all 1s;
+
+    }
+    .basketCard{
+        border-radius: 8px;
+        padding: 20px 10px;
+        border: 1px solid #dddd;
+        margin-bottom: 10px;
+        img{
+            border-radius: 8px;
+            width: 100%;
+        }
+    }
     .headerButton{
         position: absolute;
-        left: -30px;
         top: 50%;
         background-color: white;
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
-        border: 1px solid;
         cursor: pointer;
-
+        z-index: 99999;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px;
+        font-size: 20px;
+        color: #dddd;
     }
 }
 .basketListClose{
@@ -21,8 +63,8 @@
     width: 400px;
     background-color: white;
     top: 0;
-    right: -300px;
-    padding: 50px 30px;
+    right: -400px;
+    padding: 50px 30px ;
     box-sizing: border-box;
     overflow-y: scroll;
     transition: all 1s;
@@ -36,22 +78,9 @@
     background-color: white;
     top: 0;
     right: 0;
-    padding: 50px 30px;
+    padding: 50px 30px ;
     box-sizing: border-box;
     overflow-y: scroll;
     transition: all 1s;
-    .basketinnerWrapper{
-        height: 100%;
-    }
-   
-    .basketCard{
-        border-radius: 8px;
-        padding: 20px 10px;
-        border: 1px solid #dddd;
-        margin-bottom: 10px;
-        img{
-            border-radius: 8px;
-            width: 100%;
-        }
-    }
+    
 }
