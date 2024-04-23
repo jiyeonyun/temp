@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import styles from "./main.module.scss";
 import Image from "next/image";
 
-const BasketList = ({ basketInfo, setCenter, setZoom }: any) => {
+interface basketListProps {
+    basketInfo: [];
+    setCenter: any;
+    setZoom: any;
+}
+const BasketList = ({ basketInfo, setCenter, setZoom }: basketListProps) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div style={{ display: "flex" }}>
@@ -19,7 +24,7 @@ const BasketList = ({ basketInfo, setCenter, setZoom }: any) => {
 
             <div className={isOpen ? styles.basketListOpen : styles.basketListClose}>
                 <div className={styles.basketinnerWrapper}>
-                    {basketInfo.map((item: any, i: number) => {
+                    {basketInfo?.map((item: any, i: number) => {
                         return (
                             <div
                                 onClick={() => {

@@ -5,7 +5,7 @@ export default async function Main() {
     const data = await fetchBasket();
     return (
         <div className={styles.mainPage}>
-            <BasketForm data={data} />
+            <BasketForm data={Array.isArray(data) ? data : []} />
         </div>
     );
 }
